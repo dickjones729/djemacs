@@ -1,0 +1,22 @@
+[user]
+	name = Dick Jones
+	email = dickjones729@gmail.com
+[color]
+	diff = auto
+[core]
+	editor = emacs -nw -q --load $HOME/.config/emacs/git-commit.el
+	autocrlf = input
+[credential]
+	helper = store
+	useHttpPath = true
+[column]
+	ui = auto
+[branch]
+	sort = commiterdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
