@@ -124,9 +124,13 @@
 ;; ibuffers-vc sets pu ibuffers groups by git repos
 (use-package ibuffer-vc
   :ensure t
-  :after (ibuffer vc)
-  :bind (:map ibuffer-mode-map
-	      ("/ V" . ibuffer-vc-set-filter-groups-by-vc-root)))
+  ;; :after (ibuffer vc)
+  ;; :bind (:map ibuffer-mode-map
+  ;;             ("/ V" . ibuffer-vc-set-filter-groups-by-vc-root))
+)
+(eval-after-load 'ibuffer-vc
+  '(progn
+     (define-key ibuffer-mode-map (kbd "/ V") 'ibuffer-vc-set-filter-groups-by-vc-root)))
 
 ;;; EGLOT Setup
 (require 'eglot)
@@ -141,7 +145,8 @@
 ;;; Delete trailing whitespace on save
 (add-hook 'before-save-hook
 	  (lambda ()
-	    (unless (eq major-mode 'fundamental-mode)
+	    (unless (or (eq major-mode 'fundamental-mode)
+                        (eq major-mode 'markdown-mode))
 	      (delete-trailing-whitespace))))
 
 ;; Yasnippets setup
@@ -156,7 +161,19 @@
   :ensure t
   :init
   (setq vertico-resize nil)
-  (vertico-mode 1))
+  (vertico-mode)
+  :bind (:map vertico-map
+              ("TAB" . minibuffer-complete) ;; Rebind TAB to standard
+              ;;
+              ;; The M-TAB below doesn't work seems like the key is
+              ;; being escaped to the terminal even in the emacs gui
+              ;; terminal.
+              ;;
+              ;; Optionally, keep vertico-insert on M-TAB
+              ;; completion
+              ;; ("M-TAB" . vertico-insert) add other
+              ;; desired keybindings here
+              ))
 
 ;;; Marginalia Setup
 ;; Install the `marginalia' package.  This will display useful
@@ -235,6 +252,9 @@
 ;;; Unfill
 (use-package unfill
   :ensure t)
+
+;;; Company mode
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;; This stops a warning at the bottom of this file
 (provide 'init)
