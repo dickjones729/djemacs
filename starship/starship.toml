@@ -1,0 +1,41 @@
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = true
+format = 'on [$hostname](bold yellow) '
+trim_at = "."
+disabled = false
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+read_only = ' 🔒'
+
+[git_branch]
+always_show_remote = true
+
+[jobs]
+symbol = '+'
+number_threshold = 1
+symbol_threshold = 1
+
+[localip]
+ssh_only = true
+format = '@[$localipv4](bold red) '
+disabled = false
+
+[os]
+disabled = true
+format = "[ ](#767676)[$symbol]($style)"
