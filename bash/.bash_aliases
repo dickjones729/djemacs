@@ -1,9 +1,9 @@
-if [ -f "$HOME/repos/bash-git-prompt/gitprompt.sh" ]; then
-  GIT_PROMPT_ONLY_IN_REPO=0
-  GIT_PROMPT_SHOW_UPSTREAM=1
-  GIT_PROMPT_FETCH_REMOTE_STATUS=0
-  source $HOME/repos/bash-git-prompt/gitprompt.sh
-fi
+#if [ -f "$HOME/repos/bash-git-prompt/gitprompt.sh" ]; then
+#  GIT_PROMPT_ONLY_IN_REPO=0
+#  GIT_PROMPT_SHOW_UPSTREAM=1
+#  GIT_PROMPT_FETCH_REMOTE_STATUS=0
+#  source $HOME/repos/bash-git-prompt/gitprompt.sh
+#fi
 
 # Emacs aliases
 alias e='emacs -nw'
@@ -27,3 +27,5 @@ export PATH=$PATH:/home/djones/.local/bin
 export NO_AT_BRIDGE=1
 
 export GTK_OVERLAY_SCROLLING=0
+
+eval "$(starship init bash)"

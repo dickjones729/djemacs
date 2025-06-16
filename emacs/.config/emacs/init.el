@@ -36,9 +36,10 @@
 ;; Highlight the line the cursor is on
 (global-hl-line-mode 1)
 
-(let ((mono-spaced-font "Monospace")
+;;(let ((mono-spaced-font "Monospace")
+(let ((mono-spaced-font "mononoki")
       (proportionately-space-font "Sans"))
-  (set-face-attribute 'default nil :family mono-spaced-font :height 110)
+  (set-face-attribute 'default nil :family mono-spaced-font :height 120)
   (set-face-attribute 'fixed-pitch nil :family mono-spaced-font :height 1.0)
   (set-face-attribute 'variable-pitch nil :family proportionately-space-font :height 1.0))
 
