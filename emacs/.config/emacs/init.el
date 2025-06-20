@@ -37,7 +37,7 @@
 (global-hl-line-mode 1)
 
 ;;(let ((mono-spaced-font "Monospace")
-(let ((mono-spaced-font "mononoki")
+(let ((mono-spaced-font "Mononoki Nerd Font")
       (proportionately-space-font "Sans"))
   (set-face-attribute 'default nil :family mono-spaced-font :height 120)
   (set-face-attribute 'fixed-pitch nil :family mono-spaced-font :height 1.0)
