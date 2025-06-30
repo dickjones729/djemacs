@@ -19,6 +19,7 @@ disabled = false
 disabled = true
 
 [directory]
+style = 'bold 149'
 truncation_length = 8
 truncation_symbol = '…/'
 read_only = ' 🔒'
@@ -28,6 +29,7 @@ always_show_remote = true
 
 [jobs]
 symbol = '+'
+style = 'bold 130'
 number_threshold = 1
 symbol_threshold = 1
 
@@ -39,3 +41,32 @@ disabled = false
 [os]
 disabled = true
 format = "[ ](#767676)[$symbol]($style)"
+
+[cmake]
+style = 'red italic dimmed'
+format = '[$symbol($version )]($style)'
+
+[cpp]
+disabled = false
+style = 'dimmed italic 149'
+format = '[$symbol($version(-$name) )]($style)'
+
+[c]
+disabled = false
+style = 'dimmed italic 149'
+format = '[$symbol($version(-$name) )]($style)'
+
+[git_metrics]
+disabled = false
+
+[git_commit]
+only_detached = false
+tag_disabled = false
+disabled = false
+
+[java]
+detect_extensions = ['java', 'class', 'gradle', 'cljs', 'cljc']
+
+[python]
+style = 'dimmed yellow'
+format = '[${symbol}${pyenv_prefix}($version )(\($virtualenv\) )]($style)'

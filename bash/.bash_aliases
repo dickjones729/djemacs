@@ -17,7 +17,7 @@ alias ghh="git log --first-parent HEAD --pretty=format:'%C(yellow)%h %Cred%cd %C
 alias gh1="git log --all --decorate --pretty=format:'%C(yellow)%H %Cred%cd %Cblue%an %Cgreen%D %Creset%s' --date=short"
 alias th="git log --no-merges --pretty=format:'%C(yellow)%h %Cred%cd %Cblue%<(15,trunc)%an%Cgreen%d %Creset%s' --date=short --graph"
 
-export EDITOR=/usr/bin/emacs
+export EDITOR='emacs -nw -q --load $HOME/.config/emacs/git-commit.el'
 
 HISTSIZE=15000
 
