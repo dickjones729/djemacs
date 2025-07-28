@@ -80,9 +80,9 @@
           (7 . (variable-pitch 0.85))
           (8 . (variable-pitch 0.8))))
   (setq modus-themes-common-palette-overrides
-	'((bg-mode-line-active bg-lavender)
-	  (fg-mode-line-active fg-main)
-	  (border-mode-line-active bg-mode-line-active)
+        '((bg-mode-line-active bg-lavender)
+          (fg-mode-line-active fg-main)
+          (border-mode-line-active bg-mode-line-active)
           (border-mode-line-inactive bg-mode-line-inactive)
           (border-mode-line-active bg-magenta-intense))))
 (load-theme 'modus-vivendi :no-confirm)
@@ -228,7 +228,7 @@
 ;; buffer.  This can always be toggled on/off by calling the
 ;; `dired-hide-details-mode' interactively with M-x or its keybindings
 ;; (the left parenthesis by default).
- (add-hook 'dired-mode-hook #'dired-hide-details-mode)
+(add-hook 'dired-mode-hook #'dired-hide-details-mode)
 
 ;;; Toggle whitespace viewing
 (defun dj/toggle-whitespace ()
