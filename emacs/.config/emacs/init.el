@@ -16,7 +16,7 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 
-;; Those three belong in the early-init.el, but I am putting them here
+;; These three belong in the early-init.el, but I am putting them here
 ;; for convenience.  If the early-init.el exists in the same directory
 ;; as the init.el, then Emacs will read+evaluate it before moving to
 ;; the init.el.
@@ -88,7 +88,7 @@
 (load-theme 'modus-vivendi :no-confirm)
 
 ;;; Find file config
-;;;; When you first call `find-file' (C-x C-f by default), you do not
+;;;; When you first call `find-file` (C-x C-f by default), you do not
 ;;;; need to clear the existing file path before adding the new one.
 ;;;; Just start typing the whole path and Emacs will "shadow" the
 ;;;; current one.  For example, you are at ~/Documents/notes/file.txt
@@ -109,12 +109,12 @@
 ;;   2 -- skip anything less than error
 ;;   1 -- skip anything less than warning or
 ;;   0 -- don't skip any messages
-;;   Not that all messages not positively identified as warning or
+;;   Note that all messages not positively identified as warning or
 ;;   info, are considered errors.
 ;;
 (setq compilation-skip-threshold 2)
-;; Use the ansi-color package to compile output with proper colors and
-;; without the ^[ characters
+;; Use the ansi-color package to get compile output with proper colors
+;; and without the ^[ control characters
 (use-package ansi-color
   :config
   (defun my-colorize-compilation-buffer ()
@@ -122,12 +122,12 @@
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
   :hook (compilation-filter . my-colorize-compilation-buffer))
 
-;; ibuffers-vc sets pu ibuffers groups by git repos
+;; ibuffer-vc sets up ibuffers groups by git repos
 (use-package ibuffer-vc
   :ensure t
-  ;; :after (ibuffer vc)
+  ;; :after (ibuffer-vc)
   ;; :bind (:map ibuffer-mode-map
-  ;;             ("/ V" . ibuffer-vc-set-filter-groups-by-vc-root))
+  ;;             ("<f12>" . ibuffer-vc-set-filter-groups-by-vc-root))
 )
 (eval-after-load 'ibuffer-vc
   '(progn
@@ -139,18 +139,18 @@
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c++-mode-hook 'eglot-ensure)
 
-;; Attempts to get c++ modes to indent four spaces
+;;; Attempts to get c++ modes to indent four spaces
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 
 ;;; Delete trailing whitespace on save
 (add-hook 'before-save-hook
-	  (lambda ()
-	    (unless (or (eq major-mode 'fundamental-mode)
+          (lambda ()
+            (unless (or (eq major-mode 'fundamental-mode)
                         (eq major-mode 'markdown-mode))
-	      (delete-trailing-whitespace))))
+              (delete-trailing-whitespace))))
 
-;; Yasnippets setup
+;;; Yasnippets setup
 ;; (require 'yasnippet)
 ;; (yas-global-mode)
 
@@ -221,7 +221,7 @@
 ;; rename operations.  Remember that you can always use M-p and M-n in
 ;; the minibuffer to cycle through the history, regardless of what
 ;; this does.  (The "dwim" stands for "Do What I Mean".)
-(setq dired-dwim-target t)
+(setq dired-dwim-target 1)
 
 ;;; Dired Setup to elide details
 ;; Automatically hide the detailed listing when visiting a Dired
