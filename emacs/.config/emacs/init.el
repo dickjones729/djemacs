@@ -10,7 +10,7 @@
 (package-initialize)
 
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/"))
 
 ;;; Setup custom file or custom.el
 (setq custom-file (locate-user-emacs-file "custom.el"))
