@@ -38,10 +38,10 @@
 
 ;;(let ((mono-spaced-font "Monospace")
 (let ((mono-spaced-font "Mononoki Nerd Font")
-      (proportionately-space-font "Sans"))
+      (proportionately-spaced-font "Sans"))
   (set-face-attribute 'default nil :family mono-spaced-font :height 120)
   (set-face-attribute 'fixed-pitch nil :family mono-spaced-font :height 1.0)
-  (set-face-attribute 'variable-pitch nil :family proportionately-space-font :height 1.0))
+  (set-face-attribute 'variable-pitch nil :family proportionately-spaced-font :height 1.0))
 
 ;;; delete highlighted text when pasting
 (use-package delsel
