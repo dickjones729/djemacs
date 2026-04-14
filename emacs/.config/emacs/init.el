@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; Get rid of yes or no questions - y or n is enough
-(defalias 'yes-or-no-p 'y-or-n-p)
-
 ;;; Setup Package manager
 (require 'package)
 (package-initialize)
@@ -15,6 +12,9 @@
 ;;; Setup custom file or custom.el
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
+
+;;; Get rid of yes or no questions - y or n is enough
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; These three belong in the early-init.el, but I am putting them here
 ;; for convenience.  If the early-init.el exists in the same directory
